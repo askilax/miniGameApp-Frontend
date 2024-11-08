@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import GamesGridScreen from './screens/GamesGridScreen';
 import SnakeGame from './screens/SnakeGame';
+import  Memorie from './screens/Memorie';
 import LoginScreen from './screens/LoginScreen';
 const jwtDecode = require('jwt-decode');
 
@@ -19,7 +20,7 @@ const App = () => {
         const token = await AsyncStorage.getItem('userToken');
         if (token) {
           const decodedToken: any = jwtDecode(token);
-          const currentTime = Date.now() / 1000; // Convertir en secondes
+          const currentTime = Date.now() / 1000;
 
           if (decodedToken.exp < currentTime) {
             // Le token est expiré, on le supprime et on redirige vers la page Login
@@ -43,7 +44,7 @@ const App = () => {
   }, []);
 
   if (loading) {
-    return null; // Retourner un indicateur de chargement ou rien pendant la vérification du token
+    return null; 
   }
 
   return (
@@ -52,6 +53,7 @@ const App = () => {
         <Stack.Screen name="Login" component={LoginScreen}/>
         <Stack.Screen name="GamesGrid" component={GamesGridScreen}/>
         <Stack.Screen name="Snake" component={SnakeGame}/>
+        <Stack.Screen name="Memorie" component={Memorie}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -98,7 +98,7 @@ const SnakeGame: React.FC = () => {
       setHighScore(score);
     }
   
-    Alert.alert('Game Over', `Your score: ${score}`, [
+    Alert.alert('Perdu!', `Votre score: ${score}`, [
       {
         text: 'OK',
         onPress: resetGame,

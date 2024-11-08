@@ -17,11 +17,14 @@ const LoginScreen: React.FC<LoginScreenProps> = ({ navigation }) => {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post<{ token: string }>('http://192.168.1.15:5000/users/login', {
-        emailOrUsername: loginEmailOrUsername,
-        password: loginPassword,
-      });
-
+      const response = await axios.post<{ token: string }>(
+        'http://192.168.1.17:5000/users/login',
+        {
+          emailOrUsername: loginEmailOrUsername,
+          password: loginPassword,
+        },
+      );
+      
       if (response.status === 200) {
         await AsyncStorage.setItem('userToken', response.data.token);
         navigation.navigate('GamesGrid');
@@ -37,11 +40,14 @@ const LoginScreen: React.FC<LoginScreenProps> = ({ navigation }) => {
   // Fonction d'inscription
   const handleRegister = async () => {
     try {
-      const response = await axios.post('http://192.168.1.15:5000/users/register', {
-        email: registerEmail,
-        username: registerUsername,
-        password: registerPassword,
-      });
+      const response = await axios.post(
+        'http://192.168.1.17:5000/users/register',
+        {
+          email: registerEmail,
+          username: registerUsername,
+          password: registerPassword,
+        }
+      )
 
       if (response.status === 201) {
         alert('Inscription réussie, veuillez vous connecter.');

@@ -7,7 +7,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 type RootStackParamList = {
   Snake: undefined;
   Tetris: undefined;
-  Memory: undefined;
+  Memorie: undefined;
   Pong: undefined;
   Login: undefined;
 };
@@ -22,6 +22,7 @@ const GamesGridScreen: React.FC = () => {
 
   const games: Game[] = [
     { id: 'Snake', title: 'Snake' },
+    { id: 'Memorie', title: 'Memorie' },
   ];
 
   //function deconnection
