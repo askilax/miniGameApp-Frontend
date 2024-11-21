@@ -30,7 +30,7 @@ Bienvenue sur le projet **MiniGameApp** ! Il s'agit d'une application mobile qui
 ## Contact
 
 Pour toute question, suggestion ou collaboration, vous pouvez me contacter via :
-- **Email** : maxime@leblogdemaxs.fr
+- **Email** : maximesbaizero@gmail.com
 - **GitHub** : [Maxime Sbaizero](https://github.com/askilax)
 
 Merci d'avoir pris le temps de découvrir **MiniGameApp** ! Profitez des jeux et amusez-vous !
